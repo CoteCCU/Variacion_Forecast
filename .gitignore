@@ -1,0 +1,5 @@
+# Ignorar archivos CSV
+*.csv
+
+# Ignorar el archivo específico de visualización
+visualizacion_forecast.py
