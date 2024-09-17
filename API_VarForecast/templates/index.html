@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecast Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', path='script.js') }}"></script> <!-- Enlace al archivo script.js -->
+</head>
+<body>
+    <div class="container">
+        <h1>Variación del Forecast</h1>
+        
+        <!-- Dropdowns para los filtros -->
+        <div class="filters">
+            <div class="filter-item">
+                <label for="grupo-filter">Grupo:</label>
+                <select id="grupo-filter" multiple>
+                </select>
+                <button class="filter-button" onclick="applyFilter('grupo')">Aplicar Grupo</button>
+            </div>
+            <div class="filter-item">
+                <label for="sistema-filter">Sistema:</label>
+                <select id="sistema-filter" multiple>
+                </select>
+                <button class="filter-button" onclick="applyFilter('sistema')">Aplicar Sistema</button>
+            </div>
+            <div class="filter-item">
+                <label for="formato-filter">Formato:</label>
+                <select id="formato-filter" multiple>
+                </select>
+                <button class="filter-button" onclick="applyFilter('formato')">Aplicar Formato</button>
+            </div>
+            <div class="filter-item">
+                <label for="categoria-filter">Categoría:</label>
+                <select id="categoria-filter" multiple>
+                </select>
+                <button class="filter-button" onclick="applyFilter('categoria')">Aplicar Categoría</button>
+            </div>
+            <div class="filter-item">
+                <label for="pinta-filter">Pinta:</label>
+                <select id="pinta-filter" multiple>
+                </select>
+                <button class="filter-button" onclick="applyFilter('pinta')">Aplicar Pinta</button>
+            </div>
+            <div class="filter-item">
+                <label for="item-filter">Item:</label>
+                <select id="item-filter" multiple>
+                </select>
+                <button class="filter-button" onclick="applyFilter('item')">Aplicar Item</button>
+            </div>
+        </div>
+
+        <!-- Botón para aplicar todos los filtros -->
+        <button id="apply-filters">Aplicar Todos los Filtros</button>
+        
+        <!-- Contenedor del gráfico -->
+        <div id="plotContainer"></div>
+    </div>
+</body>
+</html>
